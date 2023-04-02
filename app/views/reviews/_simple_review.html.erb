@@ -1,0 +1,9 @@
+<%= turbo_frame_tag dom_id(review) do %>
+  <div class="p-5 border border-gray-100 text-sm mt-5">
+    <h3 class="font-bold"><%= time_ago_in_words(review.created_at) %></h3>
+
+    <div>
+      <%= review.body %>
+    </div>
+  </div>
+<% end %>

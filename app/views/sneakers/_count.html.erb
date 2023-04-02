@@ -1,0 +1,5 @@
+<span class="absolute right-2 top-2 flex justify-center gap-2 bg-gray-700 text-gray-300 text-sm rounded-full p-2">
+  <%= button_to '+', add_to_cart_path(sneaker), method: :post %>
+  <span><%= @cart.sneaker_count(sneaker) %></span>
+  <%= button_to '_', remove_from_cart_path(sneaker), method: :delete %>
+</span>

@@ -1,0 +1,16 @@
+<%= turbo_frame_tag dom_id(review) do %>
+  <div class="p-5 border border-gray-100 text-sm mt-5">
+    <h3 class="font-bold"><%= time_ago_in_words(review.created_at) %></h3>
+
+    <div>
+      <%= review.body %>
+    </div>
+
+    <div class="flex gap-5 mt-5">
+      <% if review.user == current_user %>
+        <%= link_to 'Edit', edit_sneaker_review_path(review.sneaker, review), class: 'border-2 px-3 py-2 border-green-600 text-green-600 rounded hover:bg-green-600 hover:text-gray-100' %>
+        <%= button_to 'Delete', sneaker_review_path(review.sneaker, review), method: :delete, class: 'border-2 px-3 py-2 border-red-600 text-red-600 rounded hover:bg-red-600 hover:text-gray-100' %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
